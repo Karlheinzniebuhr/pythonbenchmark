@@ -29,24 +29,24 @@ def time_execution(function, arg):
     return run_time
 
 
-def avgof(function, parameter, times):
+def avgof(function, parameter, times_average):
     count = 0
     track = 0
 
     while count < times:
         track += time_execution(function, parameter)
         count += 1
-    return track/times
+    return track/times_average
 
 
-def compare(functionA, functionB, parameter, times, loops=10):
+def compare(functionA, functionB, parameter, times_average, loops=10):
     # loop n times
     i = 0
     totalA = 0.0
     totalB = 0.0                      
     while i < loops:
-        first = avgof(functionA, parameter, times)
-        second = avgof(functionB, parameter, times)
+        first = avgof(functionA, parameter, times_average)
+        second = avgof(functionB, parameter, times_average)
         if first < second:
             print('functionA is ' + str(second/first) + ' times faster')
             
@@ -62,13 +62,13 @@ def compare(functionA, functionB, parameter, times, loops=10):
     elif second < first:
         print("On average function B is "+str( "{0:0f}%".format(totalA/totalB * 10) )+' faster than function A')
 
-def measure(function, parameter, times, loops=10):
+def measure(function, parameter, times_average=1, loops=10):
     # loop n times
     i = 0
     temp = 0.0
     totaltime = 0.0
     while i < loops:
-        temp = avgof(function, parameter, times)
+        temp = avgof(function, parameter, times_average)
         print("Average in loop "+str(i)+": "+str(temp))
         totaltime += temp
         i += 1
