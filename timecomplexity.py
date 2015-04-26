@@ -18,11 +18,6 @@ def avgof(times,function, parameter):
         count += 1
     return track/times
 
-def printme(string):
-    if str(3) in platform.python_version():
-        print(string)
-    else:
-        print string
 
 def compare(functionA, functionB, parameter, times, loops=10,):
     # loop n times
@@ -33,16 +28,16 @@ def compare(functionA, functionB, parameter, times, loops=10,):
         first = avgof(times, functionA, parameter)
         second = avgof(times, functionB, parameter)
         if first < second:
-            printme('functionA is ' + str(second/first) + ' times faster')
+            print('functionA is ' + str(second/first) + ' times faster')
             
         else:
-            printme('functionB is ' + str(first/second) + ' times faster')
+            print('functionB is ' + str(first/second) + ' times faster')
             
 
         totalA+=first
         totalB+=second
         i += 1
     if first < second:
-        printme("On average function A is "+str( "{0:0f}%".format(totalB/totalA * 100) )+' faster than function B')
+        print("On average function A is "+str( "{0:0f}%".format(totalB/totalA * 100) )+' faster than function B')
     elif second < first:
-        printme("On average function B is "+str( "{0:0f}%".format(totalA/totalB * 100) )+' faster than function A')
+        print("On average function B is "+str( "{0:0f}%".format(totalA/totalB * 100) )+' faster than function A')
