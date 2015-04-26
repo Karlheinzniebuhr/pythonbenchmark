@@ -23,5 +23,13 @@ def myOptimizedFunction(input):
 	# something
 timecomplexity.compare(myfunction, myUpdatedfunction, myinput, times, loops)
 ```
-
+Measure time of a single function
+```python
+import timecomplexity
+times = 1000
+myinput = "blabla"
+def myFunction(input)
+	# something
+timecomplexity.measure(myFunction, myinput, times)
+```
 
