@@ -33,7 +33,7 @@ def avgof(function, parameter, times_average):
     count = 0
     track = 0
 
-    while count < times:
+    while count < times_average:
         track += time_execution(function, parameter)
         count += 1
     return track/times_average
