@@ -17,9 +17,9 @@ import timecomplexity
 times = 1000             # number of times the functions will be tested
 loops = 10               # number of times the whole function will run and print to the console
 myinput = "some input"     # the input of your functions
-def myfunction(input):
+def myFunction(input):
 	# something
-def myUpdatedfunction(input):
+def myOptimizedFunction(input):
 	# something
 timecomplexity.compare(myfunction, myUpdatedfunction, myinput, times, loops)
 ```
