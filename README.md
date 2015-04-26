@@ -16,11 +16,12 @@ The typical use case would be that you have a functionX, and your modified funct
 Import timecomplexity
 times = 1000             # number of times the functions will be tested
 loops = 10               # number of times the whole function will run and print to the console
+input = "some input"     # the input of your functions
 def myfunction(input):
 	# something
 def myUpdatedfunction(input):
   # something
-timecomplexity .compare(myfunction, myUpdatedfunction, mystring1, times, loops)
+timecomplexity .compare(myfunction, myUpdatedfunction, input, times, loops)
 ```
 
 
