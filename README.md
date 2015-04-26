@@ -9,6 +9,7 @@ of them executes faster and how many times faster compared to the second functio
 
 How to use:
 Put the timecomplexity.py file in your working order
+Import it
 
 The typical use case would be that you have a functionX, and your modified functionX. 
 
@@ -23,7 +24,7 @@ def myOptimizedFunction(input):
 	# something
 timecomplexity.compare(myfunction, myUpdatedfunction, myinput, times_average, loops)
 ```
-Measure time of a single function
+Measuring time of a single function
 ```python
 import timecomplexity
 times_average = 1000    # this is used to produce an average --> (function_calls / number_of_calls)
