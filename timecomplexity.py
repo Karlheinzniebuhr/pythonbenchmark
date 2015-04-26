@@ -5,17 +5,27 @@ import sys
 
         
 #  This part of code is to calculate how long a code will take to run
-def time_execution(function, arg):           
+def time_execution(function, arg):         
     if sys.platform == 'win32':
-        # On Windows, the best timer is time.clock
-        start = time.clock()
-        function( arg )
-        run_time = time.clock() - start
+        # time.clock() resolution is very good on Windows, but very bad on Unix.
+
+        # ***** For now this doesn't seem to work well so we will just use time.clock() *****
+        
+        # check if python is >= V 3.3 
+        if False: #(sys.version_info[0] == 3 and sys.version_info[1] == 3):
+            run_time = time.process_time()
+            function( arg )
+            #run_time = time.process_time()
+        else:
+            start = time.clock()
+            function( arg )
+            run_time = time.clock() - start
     else:
         # On most other platforms the best timer is time.time
         start = time.time()
         function( arg )
         run_time = time.time() - start
+    #print(run_time)
     return run_time
 
 
