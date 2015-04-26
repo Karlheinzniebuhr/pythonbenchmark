@@ -27,9 +27,10 @@ Measure time of a single function
 ```python
 import timecomplexity
 times = 1000
+loops = 10
 myinput = "blabla"
 def myFunction(input)
 	# something
-timecomplexity.measure(myFunction, myinput, times)
+timecomplexity.measure(myFunction, myinput, times, loops)
 ```
 
