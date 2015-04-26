@@ -14,23 +14,23 @@ The typical use case would be that you have a functionX, and your modified funct
 
 ```python
 import timecomplexity
-times = 1000             # number of times the functions will be tested
+times_average = 1000     # this is used to produce an average --> (function_calls / number_of_calls)
 loops = 10               # number of times the whole function will run and print to the console
-myinput = "some input"     # the input of your functions
+myinput = "some input"   # the input of your functions
 def myFunction(input):
 	# something
 def myOptimizedFunction(input):
 	# something
-timecomplexity.compare(myfunction, myUpdatedfunction, myinput, times, loops)
+timecomplexity.compare(myfunction, myUpdatedfunction, myinput, times_average, loops)
 ```
 Measure time of a single function
 ```python
 import timecomplexity
-times = 1000
-loops = 10
-myinput = "blabla"
+times_average = 1000    # this is used to produce an average --> (function_calls / number_of_calls)
+loops = 10              # number of times the whole function will run and print to the console
+myinput = "blabla"	# the input of your function
 def myFunction(input)
 	# something
-timecomplexity.measure(myFunction, myinput, times, loops)
+timecomplexity.measure(myFunction, myinput, times_average, loops)
 ```
 
