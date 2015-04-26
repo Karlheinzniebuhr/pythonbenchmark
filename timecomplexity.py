@@ -10,7 +10,7 @@ def time_execution(function, arg):
         # time.clock() resolution is very good on Windows, but very bad on Unix.
 
         # ***** For now this doesn't seem to work well so we will just use time.clock() *****
-        
+
         # check if python is >= V 3.3 
         if False: #(sys.version_info[0] == 3 and sys.version_info[1] == 3):
             run_time = time.process_time()
@@ -39,7 +39,7 @@ def avgof(function, parameter, times):
     return track/times
 
 
-def compare(functionA, functionB, parameter, times, loops=10,):
+def compare(functionA, functionB, parameter, times, loops=10):
     # loop n times
     i = 0
     totalA = 0.0
@@ -62,6 +62,15 @@ def compare(functionA, functionB, parameter, times, loops=10,):
     elif second < first:
         print("On average function B is "+str( "{0:0f}%".format(totalA/totalB * 10) )+' faster than function A')
 
-def measure(function, parameter, times):
-    result = avgof(function, parameter, times)
-    print("Time: "+ str(result))
+def measure(function, parameter, times, loops=10):
+    # loop n times
+    i = 0
+    temp = 0.0
+    totaltime = 0.0
+    while i < loops:
+        temp = avgof(function, parameter, times)
+        print("Average in loop "+str(i)+": "+str(temp))
+        totaltime += temp
+        i += 1
+
+    print("Total time: "+ str(totaltime))
