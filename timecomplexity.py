@@ -1,15 +1,25 @@
 # Copyright Karlheinz Niebuhr
 import time
-import platform        
-                                             #  This part of code is to calculate how long a 
-def time_execution(function, arg):           #  code will take to run (learned in class). 
-    start = time.clock()
-    function( arg )
-    run_time = time.clock() - start
+
+import sys
+
+        
+#  This part of code is to calculate how long a code will take to run
+def time_execution(function, arg):           
+    if sys.platform == 'win32':
+        # On Windows, the best timer is time.clock
+        start = time.clock()
+        function( arg )
+        run_time = time.clock() - start
+    else:
+        # On most other platforms the best timer is time.time
+        start = time.time()
+        function( arg )
+        run_time = time.time() - start
     return run_time
 
 
-def avgof(times,function, parameter):
+def avgof(function, parameter, times):
     count = 0
     track = 0
 
@@ -25,8 +35,8 @@ def compare(functionA, functionB, parameter, times, loops=10,):
     totalA = 0.0
     totalB = 0.0                      
     while i < loops:
-        first = avgof(times, functionA, parameter)
-        second = avgof(times, functionB, parameter)
+        first = avgof(functionA, parameter, times)
+        second = avgof(functionB, parameter, times)
         if first < second:
             print('functionA is ' + str(second/first) + ' times faster')
             
@@ -41,3 +51,7 @@ def compare(functionA, functionB, parameter, times, loops=10,):
         print("On average function A is "+str( "{0:0f}%".format(totalB/totalA * 10) )+' faster than function B')
     elif second < first:
         print("On average function B is "+str( "{0:0f}%".format(totalA/totalB * 10) )+' faster than function A')
+
+def measure(function, parameter, times):
+    result = avgof(function, parameter, times)
+    print("Time: "+ str(result))
