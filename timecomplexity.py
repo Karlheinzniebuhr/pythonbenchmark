@@ -44,7 +44,7 @@ def compare(functionA, functionB, parameter, times, loops=10,):
         i += 1
     if first < second:
         print totalA, totalB
-        printme("In average function A is "+str( "{0:0f}%".format(totalB/totalA * 100) )+' faster than function B')
+        printme("On average function A is "+str( "{0:0f}%".format(totalB/totalA * 100) )+' faster than function B')
     elif second < first:
         print totalB, totalA
-        printme("In average function B is "+str( "{0:0f}%".format(totalA/totalB * 100) )+' faster than function A')
+        printme("On average function B is "+str( "{0:0f}%".format(totalA/totalB * 100) )+' faster than function A')
