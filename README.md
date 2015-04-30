@@ -1,14 +1,16 @@
 # timecomplexity
 
 <h3>Python library that makes benchmarking easy and fun</h3>
-the timeit module that comes with python is not so useful because its only for small bits of Python code.
+<font color="red">Contributors wanted. Please send me lots of pull requests or suggestions</font>
+The timeit module that comes with python is only useful for small bits of Python code not for functions.
+
 This library solves that. It provides an intuitive way to measure the execution time of functions and compare the relative speed of two functions.
 <h4>Why</h4> would you want to compare the relative speed of two functions? 
 Because if you are optimizing your code you may want to know how much of a speed improvement you gained. 
 <h4>How</h4>
 Timecomplexity allows this by letting you compare two functions which take the same input and measure which one gets the job done faster. 
 <h4>@measure</h4>
-Additionally you can just put a decorator on the functions you want to measure, timecomplexity will do all the work for you and print out the execution time in the console.
+Additionally you can just put a decorator on the functions, timecomplexity will measure them and print out the execution time in the console.
 
 How to use:
 Import timecomplexity.py
@@ -44,4 +46,6 @@ def myOptimizedFunction(arguments):
 myFunction(arguments)
 myOptimizedFunction(arguments)
 ```
-
+<h3>TODO</h3>
+Adding support to compare multiple functions maybe? 
+Any ideas are welcome
