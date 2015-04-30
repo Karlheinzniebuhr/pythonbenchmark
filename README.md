@@ -1,7 +1,7 @@
 # timecomplexity
 
 <h3>Python library that makes benchmarking easy and fun</h3>
-<font color="red">Contributors wanted. Please send me lots of pull requests or suggestions</font>
+<h6>Contributors wanted. Please send me lots of pull requests or suggestions</h6>
 The timeit module that comes with python is only useful for small bits of Python code not for functions.
 
 This library solves that. It provides an intuitive way to measure the execution time of functions and compare the relative speed of two functions.
