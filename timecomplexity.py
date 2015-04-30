@@ -1,6 +1,5 @@
 # Copyright Karlheinz Niebuhr
 import time
-
 import sys
 
 #  This part of code is to calculate how long a code will take to run
@@ -8,9 +7,10 @@ def measure(method):
     def run(*args, **kwargs): 
         if sys.platform == 'win32':
             # time.clock() resolution is very good on Windows, but very bad on Unix.
-            # ***** For now this doesn't seem to work well so we will just use time.clock() *****
-
+            
             '''
+            ***** For now process_time() doesn't seems to work well so we'll just use time.clock() *****
+
             check if python is >= V 3.3 
             if False: #(sys.version_info[0] == 3 and sys.version_info[1] == 3):
                 run_time = time.process_time()
@@ -24,7 +24,7 @@ def measure(method):
             print('%r (%r, %r) %2.20f sec' % (method.__name__, args, kwargs, run_time))
             
         else:
-            # On most other platforms the best timer is time.time
+            # On non Windows platforms the best timer is time.time
             start = time.time()
             #run the function and save the result
             result = method(*args, **kwargs)
@@ -38,15 +38,7 @@ def measure(method):
 def run_time(method,*args, **kwargs): 
     if sys.platform == 'win32':
         # time.clock() resolution is very good on Windows, but very bad on Unix.
-        # ***** For now this doesn't seem to work well so we will just use time.clock() *****
 
-        '''
-        check if python is >= V 3.3 
-        if False: #(sys.version_info[0] == 3 and sys.version_info[1] == 3):
-            run_time = time.process_time()
-            function( arg )
-            #run_time = time.process_time()
-        '''
         start = time.clock()
         #run the function and save the result
         result = method(*args, **kwargs)
@@ -54,7 +46,7 @@ def run_time(method,*args, **kwargs):
         #print('%r (%r, %r) %2.20f sec' % (method.__name__, args, kwargs, run_time))
         
     else:
-        # On most other platforms the best timer is time.time
+        # On non Windows platforms the best timer is time.time
         start = time.time()
         #run the function and save the result
         result = method(*args, **kwargs)
@@ -64,50 +56,33 @@ def run_time(method,*args, **kwargs):
     return run_time
 
 
-def avgof(function, times_average, *args, **kwargs):
-    count = 0
-    track = 0
-
-    while count < times_average:
-        time = run_time(function,*args, **kwargs)
-        print time
-        track += time
-        count += 1
-    return track/times_average
-
-
-def compare(functionA, functionB, times_average, loops=10, *args, **kwargs):
+def compare(functionA, functionB, times_average, *args, **kwargs):
     # loop n times
     i = 0
     totalA = 0.0
-    totalB = 0.0                      
-    while i < loops:
-        first = avgof(functionA, times_average, *args, **kwargs)
-        second = avgof(functionB, times_average, *args, **kwargs)
-        if first < second:
-            print(functionA.__name__+' is ' + str(second/first) + ' times faster')
-            
-        else:
-            print(functionB.__name__+' is ' + str(first/second) + ' times faster')
-            
+    totalB = 0.0
+    
+    '''
+    Normalizer
+    We intercalate the function calls because python tends to execute the second function faster if we first loop over functionA and then over functionB   
 
-        totalA+=first
-        totalB+=second
-        i += 1
-    if first < second:
-        print("On average "+ functionA.__name__+ " is "+str( "{0:0f} %".format(totalB/totalA * 10) )+' faster than '+functionB.__name__)
-    elif second < first:
-        print("On average "+ functionB.__name__+ " is "+str( "{0:0f} %".format(totalA/totalB * 10) )+' faster than '+functionA.__name__)
+    '''
+    for i in range(times_average):
+        totalA += run_time(functionA,*args, **kwargs)
+        totalB += run_time(functionB,*args, **kwargs)
 
-def measureold(function, parameter, times_average=1, loops=10):
-    # loop n times
-    i = 0
-    temp = 0.0
-    totaltime = 0.0
-    while i < loops:
-        temp = avgof(function, parameter, times_average)
-        print("Average in loop "+str(i)+": "+str(temp))
-        totaltime += temp
-        i += 1
+    totalA = totalA/times_average
+    totalB = totalB/times_average
 
-    print("Total time: "+ str(totaltime))
+    '''
+    1.001 or 0.1% is the lowest granularity time.clock() can distinguish I've tested
+    it calling compare and passing the same function twice. So we assume that if the difference 
+    of speed is less than 0.1% the functions take the same time to execute  
+    '''
+    
+    if totalA < totalB and (totalB/totalA > 1.001):
+        print("Result: "+ functionA.__name__+ " is "+ str(totalB/totalA) +" times faster than "+functionB.__name__)
+    elif totalB < totalA and (totalA/totalB > 1.001):
+        print("Result: "+ functionB.__name__+ " is "+ str(totalA/totalB) +" times faster than "+functionA.__name__)
+    else:
+        print(functionA.__name__+" and "+functionB.__name__+" have the same speed!")
