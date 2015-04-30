@@ -1,37 +1,47 @@
 # timecomplexity
 
-Python provides us with the possibility to measure the execution time of code snippets with 
-https://docs.python.org/2/library/timeit.html 
-But in most cases it’s difficult if not impossible to guess how long it should take
-to execute certain code. It would be much more useful to just see how the execution time is changed by changing the code.
-Enters  Timecomplexity! Timecomplexity allows you to compare two functions which take the same input and compares which one
-of them executes faster and how many times faster compared to the second function. 
+<h3>Python library that makes benchmarking easy and fun</h3>
+the timeit module that comes with python is not so useful because its only for small bits of Python code.
+This library solves that. It provides an intuitive way to measure the execution time of functions and compare the relative speed of two functions.
+<h4>Why</h4> would you want to compare the relative speed of two functions? 
+Because if you are optimizing your code you may want to know how much of a speed improvement you gained. 
+<h4>How</h4>
+Timecomplexity allows this by letting you compare two functions which take the same input and measure which one gets the job done faster. 
+<h4>@measure</h4>
+Additionally you can just put a decorator on the functions you want to measure, timecomplexity will do all the work for you and print out the execution time in the console.
 
 How to use:
-Put the timecomplexity.py file in your working order
-Import it
+Import timecomplexity.py
 
-The typical use case would be that you have a functionX, and your modified functionX. 
+The typical use case could be: You have functionX, and optimized functionX. Now you want to know if your modified version is faster.
 
 ```python
-import timecomplexity
+from timecomplexity import compare, measure
+import time
 times_average = 1000     # this is used to produce an average --> (function_calls / number_of_calls)
-loops = 10               # number of times the whole function will run and print to the console
-myinput = "some input"   # the input of your functions
+myinput = "some input"   # the input of your functions, It can be an arbitrary number of inputs, an array or dictionary 
 def myFunction(input):
-	# something
+	time.sleep(0.4)
 def myOptimizedFunction(input):
-	# something
-timecomplexity.compare(myfunction, myUpdatedfunction, myinput, times_average, loops)
+	time.sleep(0.2)
+	
+compare(myfunction, myUpdatedfunction, times_average, input)
 ```
-Measuring time of a single function
+Measuring execution time with the @measure decorator
 ```python
-import timecomplexity
-times_average = 1000    # this is used to produce an average --> (function_calls / number_of_calls)
-loops = 10              # number of times the whole function will run and print to the console
-myinput = "blabla"	# the input of your function
-def myFunction(input)
-	# something
-timecomplexity.measure(myFunction, myinput, times_average, loops)
+from timecomplexity import compare, measure
+import time
+
+arguments = "something" # the input of your functions, It can be an arbitrary number of inputs, an array or dictionary
+
+@measure
+def myFunction(arguments):
+	time.sleep(0.4)
+@measure
+def myOptimizedFunction(arguments):
+	time.sleep(0.2)
+	
+myFunction(arguments)
+myOptimizedFunction(arguments)
 ```
 
