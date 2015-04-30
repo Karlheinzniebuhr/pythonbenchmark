@@ -1,4 +1,7 @@
-# Copyright Karlheinz Niebuhr
+# Author: Karlheinz Niebuhr
+# Copyright (c) 2015
+# License: see License.txt
+
 import time
 import sys
 
@@ -79,7 +82,7 @@ def compare(functionA, functionB, times_average, *args, **kwargs):
     it calling compare and passing the same function twice. So we assume that if the difference 
     of speed is less than 0.1% the functions take the same time to execute  
     '''
-    
+
     if totalA < totalB and (totalB/totalA > 1.001):
         print("Result: "+ functionA.__name__+ " is "+ str(totalB/totalA) +" times faster than "+functionB.__name__)
     elif totalB < totalA and (totalA/totalB > 1.001):
