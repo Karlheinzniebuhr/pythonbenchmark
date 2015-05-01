@@ -34,7 +34,7 @@ def measure(method):
             run_time = time.time() - start
             print('%r (%r, %r) %2.20f sec' % (method.__name__, args, kwargs, run_time))
             
-        return run_time
+        return result
     return run
 
 
