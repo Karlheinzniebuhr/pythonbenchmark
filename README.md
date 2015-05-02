@@ -53,3 +53,7 @@ myOptimizedFunction(arguments)
 <h3>TODO</h3>
 Adding support to compare multiple functions maybe? 
 Any ideas are welcome
+
+
+[![Bitdeli Badge](https://d2weczhvl823v0.cloudfront.net/Karlheinzniebuhr/pythonbenchmark/trend.png)](https://bitdeli.com/free "Bitdeli Badge")
+
