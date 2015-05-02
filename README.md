@@ -15,7 +15,7 @@ Pythonbenchmark allows this by letting you compare two functions which take the 
 <h4>@measure</h4>
 Additionally you can just put a decorator on the functions, pythonbenchmark will measure them and print out the execution time in the console.
 
-How to use:
+<h3>Howto</h3>:
 Import pythonbenchmark.py
 
 The typical use case could be: You have functionX, and optimized functionX. Now you want to know if your modified version is faster.
