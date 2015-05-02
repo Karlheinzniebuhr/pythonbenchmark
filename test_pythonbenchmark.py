@@ -1,4 +1,4 @@
-from timecomplexity import compare, measure
+from pythonbenchmark import compare, measure
 import time
 
 
