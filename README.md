@@ -53,3 +53,4 @@ myOptimizedFunction(arguments)
 <h3>TODO</h3>
 Adding support to compare multiple functions maybe? 
 Any ideas are welcome
+
