@@ -15,7 +15,9 @@ Pythonbenchmark allows this by letting you compare two functions which take the 
 <h4>@measure</h4>
 Additionally you can just put a decorator on the functions, pythonbenchmark will measure them and print out the execution time in the console.
 
-<h3>Howto</h3>:
+How to use:
+Import pythonbenchmark.py
+
 The typical use case could be: You have functionX, and optimized functionX. Now you want to know if your modified version is faster.
 
 ```python
@@ -35,7 +37,7 @@ def myOptimizedFunction(something):
 compare(myFunction, myOptimizedFunction, 10, input)
 ```
 
-Output
+<h4>Output</h4>
 ![alt tag](https://github.com/Karlheinzniebuhr/pythonbenchmark/blob/master/test_files/test_compare.PNG)
 
 
@@ -59,11 +61,10 @@ myFunction(input)
 myOptimizedFunction(input)
 
 ```
-Output
+<h4>Output</h4>
 ![alt tag](https://github.com/Karlheinzniebuhr/pythonbenchmark/blob/master/test_files/test_decorator.PNG)
 
 <hr>
 <h3>TODO</h3>
 Adding support to compare multiple functions maybe? 
 Any ideas are welcome
-
