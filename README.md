@@ -23,32 +23,45 @@ The typical use case could be: You have functionX, and optimized functionX. Now 
 ```python
 from pythonbenchmark import compare, measure
 import time
-times_average = 1000     # this is used to produce an average --> (function_calls / number_of_calls)
-myinput = "some input"   # the input of your functions, It can be an arbitrary number of inputs, an array or dictionary 
-def myFunction(input):
+
+a,b,c,d,e = 10,10,10,10,10
+something = [a,b,c,d,e]
+
+def myFunction(something):
 	time.sleep(0.4)
-def myOptimizedFunction(input):
+
+def myOptimizedFunction(something):
 	time.sleep(0.2)
-	
-compare(myfunction, myUpdatedfunction, times_average, input)
+
+# comparing test
+compare(myFunction, myOptimizedFunction, 10, input)
 ```
+
+<h4>Output</h4>
+
 Measuring execution time with the @measure decorator
 ```python
 from pythonbenchmark import compare, measure
 import time
 
-arguments = "something" # the input of your functions, It can be an arbitrary number of inputs, an array or dictionary
+a,b,c,d,e = 10,10,10,10,10
+something = [a,b,c,d,e]
 
 @measure
-def myFunction(arguments):
+def myFunction(something):
 	time.sleep(0.4)
+
 @measure
-def myOptimizedFunction(arguments):
+def myOptimizedFunction(something):
 	time.sleep(0.2)
-	
-myFunction(arguments)
-myOptimizedFunction(arguments)
+
+myFunction(input)
+myOptimizedFunction(input)
+
 ```
+<h4>Output</h4>
+
+
 <hr>
 <h3>TODO</h3>
 Adding support to compare multiple functions maybe? 
