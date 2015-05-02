@@ -36,7 +36,6 @@ compare(myFunction, myOptimizedFunction, 10, input)
 ```
 
 <h4>Output</h4>
-
 ![alt tag](https://github.com/Karlheinzniebuhr/pythonbenchmark/blob/master/test_files/test_compare.PNG)
 
 
@@ -61,7 +60,6 @@ myOptimizedFunction(input)
 
 ```
 <h4>Output</h4>
-
 ![alt tag](https://github.com/Karlheinzniebuhr/pythonbenchmark/blob/master/test_files/test_decorator.PNG)
 
 <hr>
