@@ -4,17 +4,17 @@ import time
 a,b,c,d,e = 10,10,10,10,10
 something = [a,b,c,d,e]
 
-@measure
+#@measure
 def myFunction(something):
 	time.sleep(0.4)
 
-@measure
+#@measure
 def myOptimizedFunction(something):
 	time.sleep(0.2)
 
 # decorator test
-myFunction(input)
-myOptimizedFunction(input)
+#myFunction(input)
+#myOptimizedFunction(input)
 
 # comparing test
-# compare(myFunction, myOptimizedFunction, 2,a,b,c,d,e)
+compare(myFunction, myOptimizedFunction, 10, input)
