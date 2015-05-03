@@ -62,9 +62,11 @@ myOptimizedFunction(input)
 
 ```
 <h4>Output</h4>
-[![Analytics](https://ga-beacon.appspot.com/UA-37427094-2/https://github.com/Karlheinzniebuhr/pythonbenchmark/edit/master/README.md)](https://github.com/Karlheinzniebuhr/pythonbenchmark/blob/master/test_files/test_decorator.PNG)
+![alt tag](https://github.com/Karlheinzniebuhr/pythonbenchmark/blob/master/test_files/test_decorator.PNG)
+
 <hr>
 <h3>TODO</h3>
 Adding support to compare multiple functions maybe? 
 Any ideas are welcome
 
+[![Analytics](https://ga-beacon.appspot.com/UA-37427094-2/Karlheinzniebuhr/pythonbenchmark/)](https://github.com/igrigorik/ga-beacon)
