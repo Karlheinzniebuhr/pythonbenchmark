@@ -1,7 +1,7 @@
 from distutils.core import setup
 setup(
   name = 'pythonbenchmark',
-  packages = ['/'], # this must be the same as the name above
+  packages = ['pythonbenchmark'], # this must be the same as the name above
   version = '1.2',
   description = 'A Python library that makes benchmarking easy and fun.',
   author = 'Karlheinz Niebuhr',
