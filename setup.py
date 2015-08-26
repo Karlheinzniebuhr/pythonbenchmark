@@ -1,8 +1,8 @@
 from distutils.core import setup
 setup(
   name = 'pythonbenchmark',
-  packages = ['pythonbenchmark'], # this must be the same as the name above
-  version = '1.0',
+  packages = ['/'], # this must be the same as the name above
+  version = '1.2',
   description = 'A Python library that makes benchmarking easy and fun.',
   author = 'Karlheinz Niebuhr',
   author_email = 'karlheinzniebuhr89@gmail.com',
