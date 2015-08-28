@@ -1,4 +1,4 @@
-from pythonbenchmark.pythonbenchmark import compare, measure
+from pythonbenchmark import *
 import time
 
 a,b,c,d,e = 10,10,10,10,10
