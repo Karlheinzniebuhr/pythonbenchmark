@@ -6,10 +6,8 @@ The timeit module that comes with python is only useful for small bits of Python
 <hr>
 This library solves that. It provides an intuitive way to measure the execution time of functions and compare the relative speed of two functions.
 <hr>
-<h4>Why</h4> would you want to compare the relative speed of two functions? 
-Because if you are optimizing your code you may want to know how much of a speed improvement you gained. 
+Optimizing your code? Curious how much speed you gained? No problem
 <hr>
-<h4>How</h4>
 Pythonbenchmark allows this by letting you compare two functions which take the same input and measure which one gets the job done faster.
 <hr>
 <h4>@measure</h4>
@@ -18,7 +16,7 @@ Additionally you can just put a decorator on the functions, pythonbenchmark will
 How to use:
 Import pythonbenchmark.py
 
-The typical use case could be: You have functionX, and optimized functionX. Now you want to know if your modified version is faster.
+The typical use case could be: You have functionX, and optimized functionX. Now you want to know if your modified version is faster and how much.
 
 ```python
 from pythonbenchmark import compare, measure
