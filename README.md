@@ -1,6 +1,5 @@
-## Learn to write faster code by experimenting with this library 
+### Learn to write faster code by experimenting with this library 
 
-<h6>The Python library that makes benchmarking easy and fun</h6>
 #pip install pythonbenchmark  
 The timeit module that comes with python is only useful for small bits of Python code not for functions.
 <hr>
