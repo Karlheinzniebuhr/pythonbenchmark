@@ -1,4 +1,4 @@
-## Pythonbenchmark
+## Learn to write faster code by experimenting with this library 
 
 <h6>The Python library that makes benchmarking easy and fun</h6>
 #pip install pythonbenchmark  
