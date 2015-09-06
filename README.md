@@ -8,14 +8,16 @@ This library solves that. It provides an intuitive way to measure the execution 
 Optimizing your code? Curious how much speed you gained? No problem
 <hr>
 Pythonbenchmark allows this by letting you compare two functions which take the same input and measure which one gets the job done faster.
+<h4>compare(myFunction, myOptimizedFunction, 10)</h4>
 <hr>
-<h4>@measure</h4>
 Additionally you can just put a decorator on the functions, pythonbenchmark will measure them and print out the execution time in the console.
+<h4>@measure</h4>
 
-How to use:
-Import pythonbenchmark.py
+<hr>
+####How to use it:
+import pythonbenchmark.py
 
-The typical use case could be: You have functionX, and optimized functionX. Now you want to know if your modified version is faster and how much.
+A typical use case is: I have functionX, and optimized functionX. Now I want to know if my modified version is faster and how much.
 
 ```python
 from pythonbenchmark import compare, measure
@@ -32,6 +34,8 @@ def myOptimizedFunction(something):
 
 # comparing test
 compare(myFunction, myOptimizedFunction, 10, input)
+# without input
+compare(myFunction, myOptimizedFunction, 100)
 ```
 
 <h4>Output</h4>
