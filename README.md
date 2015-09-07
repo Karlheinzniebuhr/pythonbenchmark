@@ -15,7 +15,7 @@ compare(myFunction, myOptimizedFunction, 10)
 ```python
 @measure
 def myFunction(something):
-    print([x*x for x in range(1000)])
+    [x*x for x in range(1000000)]
 ```
 
 ###How-To:
