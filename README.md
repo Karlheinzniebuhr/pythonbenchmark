@@ -8,11 +8,15 @@
 - Optimizing your code? Curious how much speed you gained? No problem
 
 - Pythonbenchmark allows this by letting you compare two functions which take the same input and measure which one gets the job done faster.
-<h4>compare(myFunction, myOptimizedFunction, 10)</h4>
-
+```python
+compare(myFunction, myOptimizedFunction, 10)
+```
 - Additionally you can just put a decorator on the functions, pythonbenchmark will measure them and print out the execution time in the console.
-<h4>@measure</h4>
-
+```python
+@measure
+def myFunction(something):
+    print([x*x for x in range(1000)])
+```
 
 ###How-To:
 A typical use case is: I have functionX, and optimized functionX. Now I want to know if my modified version is faster and how much.
