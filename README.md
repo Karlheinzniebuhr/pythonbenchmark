@@ -72,6 +72,4 @@ myOptimizedFunction(input)
 Do experiments, have fun!  
 Make incremental changes to your high performance code and see how much speed improvement you gain with each modification. This will give you an enormous intuition about how to write fast code :)  
 
-
-
-[![Analytics](https://ga-beacon.appspot.com/UA-37427094-2/Karlheinzniebuhr/pythonbenchmark/)](https://github.com/igrigorik/ga-beacon)
+A spanish article about how I came up with this library is on my  ![Blog.](http://karlheinzniebuhr.github.io/es/2015/05/10/de-CS101-a-una-libreria-python.html)
