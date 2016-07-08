@@ -41,7 +41,7 @@ compare(myFunction, myOptimizedFunction, 100)
 ```
 
 <h4>Output</h4>
-![alt tag](https://github.com/Karlheinzniebuhr/pythonbenchmark/blob/master/images/test_compare.PNG)
+![alt tag](https://github.com/Karlheinzniebuhr/pythonbenchmark/blob/master/images/test_compare.PNG?raw=true)
 
 
 Measuring execution time with the @measure decorator
@@ -65,7 +65,7 @@ myOptimizedFunction(input)
 
 ```
 <h4>Output</h4>
-![alt tag](https://github.com/Karlheinzniebuhr/pythonbenchmark/blob/master/images/test_decorator.PNG)
+![alt tag](https://github.com/Karlheinzniebuhr/pythonbenchmark/blob/master/images/test_decorator.PNG?raw=true)
 
 <hr>
 

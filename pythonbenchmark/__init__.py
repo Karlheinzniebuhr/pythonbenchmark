@@ -1,1 +1,1 @@
-from pythonbenchmark import compare, measure
+from .pythonbenchmark import compare, measure
