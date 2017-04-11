@@ -41,6 +41,7 @@ compare(myFunction, myOptimizedFunction, 100)
 ```
 
 <h4>Output</h4>
+
 ![alt tag](https://raw.githubusercontent.com/Karlheinzniebuhr/pythonbenchmark/master/images/test_compare.PNG)
 
 
@@ -65,6 +66,7 @@ myOptimizedFunction(input)
 
 ```
 <h4>Output</h4>
+
 ![alt tag](https://raw.githubusercontent.com/Karlheinzniebuhr/pythonbenchmark/master/images/test_decorator.PNG)
 
 <hr>
