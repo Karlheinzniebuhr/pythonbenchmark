@@ -1,6 +1,6 @@
 ### Learn to write faster code by experimenting with this library 
 
-#pip install pythonbenchmark  
+# pip install pythonbenchmark  
 - The timeit module that comes with python is only useful for small bits of Python code not for functions.
 
 - This library solves that. It provides an intuitive way to measure the execution time of functions and compare the relative speed of two functions.
@@ -18,7 +18,7 @@ def myFunction(something):
     [x*x for x in range(1000000)]
 ```
 
-###How-To:
+### How-To:
 A typical use case is: I have functionX, and optimized functionX. Now I want to know if my modified version is faster and how much.
 
 ```python
